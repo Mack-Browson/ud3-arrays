@@ -18,7 +18,6 @@ public class Main {
         Random r = new Random ();
 
         int aleatorio = r.nextInt(100);
-        System.out.println (" Matriz de 10x10 ");
 
         System.out.println (" cuantas filas quieres en esa matriz ");
         int fila = Integer.parseInt (br.readLine ());
