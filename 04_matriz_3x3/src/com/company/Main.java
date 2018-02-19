@@ -8,36 +8,24 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 	// write your code here
-        BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
 
-        System.out.println (" cuantas filas quieres en esa matriz ");
-        int fila = Integer.parseInt (br.readLine ());
+        int[][] matriz =new int[3][3];
+        // Pedir valor al usuario
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println (" Dame ahora el numero de columnas ");
-        int columnas = Integer.parseInt (br.readLine ());
-
-        int[][] matriz = new int[fila][columnas];
-
-
-        for (int i= 0; i<matriz.length;i++){
-            for (int j=0; j<matriz[0].length;j++){
-                System.out.print ( " Introdusca valores a la matriz : ");
-                matriz[i][j]= Integer.parseInt (br.readLine ());
+        for (int i=0;i<matriz.length;i++){
+            for (int j=0;j<matriz.length;j++){
+                System.out.println("Inserte valores : ");
+                matriz[i][j]=Integer.parseInt(br.readLine());
             }
         }
 
-          //  mostrar las matrices
-
-        System.out.println (" Matriz de orden : "+fila+"x"+columnas);
-        for (int i= 0; i<matriz.length; i++){
-
-            for (int j=0; j<matriz[0].length;j++){
-
+        //visualizar la matriz
+        for (int i=0;i<matriz.length;i++){
+            for (int j=0; j<matriz.length;j++){
                 System.out.print(matriz[i][j]);
             }
-            System.out.println (" ");
+            System.out.println();
         }
-
-
     }
 }

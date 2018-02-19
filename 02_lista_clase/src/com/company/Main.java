@@ -3,49 +3,42 @@ package com.company;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
 	// write your code here
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 
-        BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
+        System.out.print("Que tamaño tendra el array : ");
+        int tamanyo= Integer.parseInt(br.readLine());
 
-        System.out.println ( " Cuantos alumnos hay en clase : ");
-        int tamanyo = Integer.parseInt (br.readLine ());
+        String[] alumnos =new String[tamanyo];
+        //rellenar el array con los nombres de los alumnos
+        for (int i=0;i<alumnos.length;i++){
+            System.out.println(" Nombre y apellido ");
+            alumnos[i]=br.readLine();
+        }
 
-        String[] alumno = new String[tamanyo];
-       int i;
-       String buscar;
- // recorremos y luego almacenamos datos
+        String buscar;
+        //hacemos una busqueda en el array
+        do{
 
-           for (i = 0; i < alumno.length; i++) {
-               System.out.println ("  Nombre del compañero :  : ");
-               alumno[i] = br.readLine ();
+            System.out.println(" Que estas buscando : ");
+            buscar = br.readLine();
 
-           }
+            //que letra desea buscar
+            char letra =buscar.charAt(0);
 
-           do {
-               System.out.println (" Que quieres buscar ");
-               buscar = br.readLine ();
+            System.out.println(" Hemos encontrado : ");
 
-               // Buscamos en el arreglo
-               char letra = buscar.charAt (0);
-               System.out.println (" Hemos encontrado esos nombre : ");
-               for (int j=0; j<alumno.length;j++){
+            for (int i=0;i<alumnos.length;i++){
+                char encontrado =alumnos[i].charAt(0);
 
-                   char e = alumno[j].charAt (0);
-                   if (e == letra){
-
-                       System.out.println (alumno[j]);
-                   }
-
-               }
-
-
-           }while (!buscar.equalsIgnoreCase ("fin"));
-
-
+                if (encontrado == letra){
+                    System.out.println(alumnos[i]);
+                }
+            }
+        }while(buscar.equalsIgnoreCase("fin"));
     }
 }
